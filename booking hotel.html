@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Hotel</title>
+    <link rel="stylesheet" href="booking hotel.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <main>
+        <header>
+            <img src="https://cdn-icons-png.flaticon.com/512/139/139899.png" alt="Hotel Logo" class="hotel-logo">
+            <h1>Enjoy Hotel</h1>
+            <p>Enjoy excellent service and modern rooms in the heart of Nairobi!</p>
+        </header>
+        <section class="gallery">
+            <h2>Hotel Gallery</h2>
+            <div class="images">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Hotel Room 1">
+                <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80" alt="Hotel Room 2">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Hotel Pool">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Hotel Lounge">
+                <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=400&q=80" alt="Hotel Restaurant">
+            </div>
+        </section>
+        <section class="info">
+            <h2>Hotel Information</h2>
+            <ul>
+                <li>Address: Moi Avenue, Nairobi, Kenya</li>
+                <li>Price: $50 per night</li>
+                <li>Phone: <a href="https://wa.me/254708178696" target="_blank" style="color:#25D366;text-decoration:none;font-weight:bold;">+254708178696 (WhatsApp)</a></li>
+                <li>Email: <a href="mailto:cadnaankatuusa@gmail.com">cadnaankatuusa@gmail.com</a></li>
+            </ul>
+        </section>
+        <section class="map">
+            <h2>Hotel Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.19743455336!2d36.8219466!3d-1.2920659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d4b7b2b2b2%3A0x2b2b2b2b2b2b2b2b!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1680000000000!5m2!1sen!2ske" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <section class="booking-form">
+            <h2>Book Your Room</h2>
+            <form id="bookingForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="date">Check-in Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="nights">Number of Nights:</label>
+                <input type="number" id="nights" name="nights" min="1" value="1" required>
+
+                <label for="rooms">Number of Rooms:</label>
+                <input type="number" id="rooms" name="rooms" min="1" value="1" required>
+
+                <h3>Payment Method</h3>
+                <label><input type="radio" name="payment" value="card" required> Card Bank</label>
+                <label><input type="radio" name="payment" value="mpesa"> E-mpesa</label>
+                <div id="mpesaDetails" style="display:none;margin-top:0.5rem;">
+                    <label for="mpesaNumber">E-mpesa Number:</label>
+                    <input type="text" id="mpesaNumber" name="mpesaNumber" pattern="[0-9]{10,15}">
+                </div>
+                <br>
+                <label><input type="radio" name="paidStatus" value="paid" required> I have paid now (Paid)</label>
+                <label><input type="radio" name="paidStatus" value="unpaid"> I will pay at check-in (Unpaid)</label>
+
+                <button type="submit">Book Now</button>
+            </form>
+            <div id="bookingResult" style="margin-bottom:1.5rem;"></div>
+        </section>
+        <section class="bookings-list">
+            <button id="showBookings">View All Bookings</button>
+            <div id="allBookings"></div>
+        </section>
+    </main>
+    <script src="booking hotel.js"></script>
+</body>
+</html>
